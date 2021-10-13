@@ -33,7 +33,10 @@ const devserverConfig = {
     'stage.foo.redhat.com',
     'prod.foo.redhat.com',
     process.env.DEFAULT_HOST,
-  ],
+    /**
+     * Webpack dev server v4 throws an error if undefined entry is in the array
+     */
+  ].filter((item) => typeof item === 'string'),
 };
 
 module.exports.devserverConfig = devserverConfig;

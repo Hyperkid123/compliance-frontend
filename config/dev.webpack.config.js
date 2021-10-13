@@ -30,7 +30,6 @@ const webpackProxy = {
     env: chromeEnv(),
     useProxy: true,
     proxyVerbose: true,
-    useCloud: (process.env?.USE_CLOUD === 'true'),
     ...useLocalChrome(),
     routesPath: process.env.ROUTES_PATH || resolve(__dirname, '../config/spandx.config.js'),
     routes: {
